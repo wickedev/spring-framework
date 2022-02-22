@@ -1,7 +1,12 @@
 apply plugin: "maven-publish"
 
 publishing {
-	publications {
+	repositories {
+		maven {
+			url = uri("$rootDir/maven-repo")
+		}
+	}
+	/*publications {
 		mavenJava(MavenPublication) {
 			pom {
 				afterEvaluate {
@@ -46,7 +51,7 @@ publishing {
 				}
 			}
 		}
-	}
+	}*/
 }
 
 configureDeploymentRepository(project)
